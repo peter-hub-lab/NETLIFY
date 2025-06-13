@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>prp school Portal</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 40px; }
+        .container { max-width: 400px; margin: auto; }
+        .dashboard { display: none; }
+        .profile, .courses, .fees { margin-bottom: 20px; }
+        label { display: block; margin-top: 10px; }
+        input[type="text"], input[type="password"] { width: 100%; padding: 8px; }
+        button { margin-top: 15px; padding: 8px 16px; }
+        table { width: 100%; border-collapse: collapse; }
+        th, td { border: 1px solid #ccc; padding: 6px; text-align: left; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Login Form -->
+        <div id="loginForm">
+            <h2>Student Login</h2>
+            <label for="username">Username:</label>
+            <input type="text" id="username" placeholder="Enter username">
+            <label for="password">Password:</label>
+            <input type="password" id="password" placeholder="Enter password">
+            <button onclick="login()">Login</button>
+        </div>
+
+        <!-- Dashboard -->
+        <div id="dashboard" class="dashboard">
+            <h2>Welcome, <span id="studentName">Student</span></h2>
+            <div class="profile">
+                <h3>Profile</h3>
+                <p><strong>Name:</strong> David Smith</p>
+                <p><strong>Student ID:</strong> 123456</p>
+                <p><strong>Course:</strong> Computer Science</p>
+            </div>
+            <div class="courses">
+                <h3>Units</h3>
+                <table>
+                    <tr><th>Unit Code</th><th>Unit Name</th></tr>
+                    <tr><td>CSC101</td><td>Introduction to Programming</td></tr>
+                    <tr><td>CSC102</td><td>Data Structures</td></tr>
+                    <tr><td>CSC103</td><td>Web Development</td></tr>
+                </table>
+            </div>
+            <div class="fees">
+                <h3>Fees Balance</h3>
+                <p><strong>Outstanding Balance:</strong> $500</p>
+            </div>
+        </div>
+    </div>
+    <script>
+        function login() {
+            // This is just a demo. In real life, use server-side authentication.
+            var username = document.getElementById('username').value;
+            var password = document.getElementById('password').value;
+            if(username && password) {
+                document.getElementById('loginForm').style.display = 'none';
+                document.getElementById('dashboard').style.display = 'block';
+                document.getElementById('studentName').textContent = username;
+            } else {
+                alert('Please enter username and password.');
+            }
+        }
+    </script>
+</body>
+</html>
